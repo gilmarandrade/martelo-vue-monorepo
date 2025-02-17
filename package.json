@@ -8,6 +8,9 @@
     "packages/**"
   ],
   "scripts": {
+    "dev:playground": "npm run dev -w @martelo-vue/playground",
+    "dev:core": "npm run dev -w @martelo-vue/core",
+    "dev": "npm run dev:playground & npm run dev:core",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
