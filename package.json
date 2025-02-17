@@ -10,7 +10,7 @@
   "scripts": {
     "dev:playground": "npm run dev -w @martelo-vue/playground",
     "dev:core": "npm run dev -w @martelo-vue/core",
-    "dev": "npm run dev:playground & npm run dev:core",
+    "dev": "npm-run-all --parallel dev:**",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/gilmarandrade/martelo-vue-monorepo#readme",
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "typescript": "~5.6.2"
   }
 }
