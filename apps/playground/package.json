@@ -12,6 +12,7 @@
     "vue": "^3.5.12"
   },
   "devDependencies": {
+    "@martelo-vue/core": "^0.0.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "vite": "^5.4.9",
     "vue-tsc": "^2.1.6"
