@@ -1,9 +1,3 @@
-export function testFunction() {
-    console.log('Hello World from @martelo-vue/core')
-}
+import "./style.css"
 
-export default class TestClass {
-    constructor() {
-
-    }
-}
+export { default as MyBrandButton } from "./MyBrandButton/MyBrandButton.vue"
