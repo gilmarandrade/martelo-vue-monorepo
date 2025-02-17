@@ -1,5 +1,5 @@
 {
-  "name": "martelo-vue-monorepo",
+  "name": "@martelo-vue/monorepo",
   "version": "1.0.0",
   "description": "Vue gesture tracker",
   "main": "index.js",
