@@ -1,0 +1,22 @@
+{
+  "name": "martelo-vue-monorepo",
+  "version": "1.0.0",
+  "description": "Vue gesture tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilmarandrade/martelo-vue-monorepo.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Gilmar Andrade <gilmar-andrade@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gilmarandrade/martelo-vue-monorepo/issues"
+  },
+  "homepage": "https://github.com/gilmarandrade/martelo-vue-monorepo#readme"
+}
