@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/gilmarandrade/martelo-vue-monorepo/issues"
   },
-  "homepage": "https://github.com/gilmarandrade/martelo-vue-monorepo#readme"
+  "homepage": "https://github.com/gilmarandrade/martelo-vue-monorepo#readme",
+  "devDependencies": {
+    "typescript": "~5.6.2"
+  }
 }
