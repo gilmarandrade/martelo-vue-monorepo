@@ -1,5 +1,8 @@
 <template>
     <div class="capture-area">
+        <svg class="capture-layer">
+            <circle cx="0" cy="0" r="5" fill="red"/>
+        </svg>
     </div>
 </template>
 
@@ -10,5 +13,13 @@
     width: 800px;
     height: 500px;
     background-color: white;
+    position: relative;
+}
+
+.capture-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
 }
 </style>
