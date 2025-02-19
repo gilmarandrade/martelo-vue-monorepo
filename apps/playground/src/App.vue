@@ -2,7 +2,7 @@
 </script>
 
 <template>
-app
+<RouterView />
 </template>
 
 <style scoped>

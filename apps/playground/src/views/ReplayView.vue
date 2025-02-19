@@ -1,0 +1,3 @@
+<template>
+    replay view
+</template>
