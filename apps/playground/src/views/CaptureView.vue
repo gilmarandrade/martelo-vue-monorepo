@@ -25,7 +25,7 @@ import CaptureArea from '../components/CaptureArea.vue';
 
 <style scoped>
 .capture-layout {
-    background-color: violet;
+    /* background-color: violet; */
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -43,11 +43,12 @@ import CaptureArea from '../components/CaptureArea.vue';
 }
 
 .status-panel {
-    background-color: blueviolet;
+    background-color: rgba(0, 0, 0, 0.247);
     grid-area: status;
     display: flex;
     align-items: center;
     gap: 15px;
+    padding: 0 4px;
 }
 
 .capture-area {
