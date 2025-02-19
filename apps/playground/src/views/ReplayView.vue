@@ -2,48 +2,41 @@
     <div class="replay-layout">
         <aside class="aside-panel">
             <div class="aside_tabs-panel">
-                tabs
+                <!-- <h1>
+                    Events
+                </h1> -->
             </div>
             <div class="aside_content-panel">
-                <div>
-                    <p>content panel</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis omnis aspernatur pariatur laudantium illum quaerat, error tenetur sint deleniti sed magni nobis at. Eum incidunt corrupti veniam tempore nesciunt possimus?
-                    Assumenda quia, consequuntur temporibus, nobis commodi in a impedit dicta, culpa qui laudantium? Optio consectetur commodi quasi, facere officiis quia molestias reiciendis vero perspiciatis repellendus nemo corporis perferendis officia illo!
-                    Officia laborum quaerat quibusdam quos voluptatum tempora, sequi non dolorem mollitia amet ipsa obcaecati quod, odit quas facilis debitis vero consectetur ullam, quia voluptates ipsum. Labore sunt id in cumque?
-                    Sint totam odit obcaecati earum aliquam illum perspiciatis ipsam non quas quia architecto molestiae beatae id vitae, deserunt fugiat magnam a doloribus labore esse aut error in voluptatum impedit. Similique?
-                    Nesciunt perspiciatis nemo quidem, nam cumque et! Maxime obcaecati natus nulla tempore reprehenderit impedit corporis, modi molestiae debitis animi neque nihil sint, facilis, deserunt ad ullam quibusdam. Natus, facere nulla.
-                    Earum perferendis explicabo, repellat nemo delectus quisquam asperiores voluptate, ut quasi recusandae molestiae maxime error excepturi numquam cum a voluptatem nisi doloremque. Possimus quis repellendus beatae qui at amet non?
-                    Rerum molestiae libero doloremque alias velit dolorem pariatur quas beatae, natus excepturi at architecto vitae laudantium animi, explicabo quasi magnam sed eos earum vel? Quam voluptates minus veritatis voluptatem. Sint.
-                    Recusandae repudiandae id molestias non quas voluptatum incidunt necessitatibus rem consectetur dolorem impedit ipsam totam repellat reiciendis nesciunt illum neque aliquid accusantium quasi, facere doloremque, harum accusamus nemo optio? Beatae?
-                    Accusantium cumque itaque eaque porro nulla perferendis quidem earum, nihil cum nemo culpa dolorem cupiditate autem impedit quae suscipit! Recusandae quae inventore dolore dicta sed, officia doloribus harum voluptas saepe.
-                    Neque optio sunt atque illum. Obcaecati, eligendi mollitia nisi iusto expedita eveniet vitae quod sit, id eaque quasi voluptates, sunt adipisci error quo cupiditate similique deserunt illum in fugiat quam?
-                    Laboriosam veniam totam similique voluptatum, est maiores deserunt harum quia dolor, ipsam, architecto quisquam reprehenderit voluptate laborum. Amet distinctio fugiat aut, laudantium optio dolorum sequi vel. Eius officiis quaerat inventore.
-                    Consequuntur nostrum facilis asperiores rem, quos quod repellendus soluta vel laborum tenetur ipsa porro ratione vitae aliquid, veniam nihil aperiam animi provident laudantium quisquam. Earum perspiciatis nemo aliquid debitis natus.
-                    Dolores itaque rerum natus cum ab nesciunt placeat corporis, sapiente quis quos deleniti id ea enim, illo, libero iure labore? Numquam rem cum quam, enim iure eos unde ullam iusto!
-                    Quae quaerat tenetur incidunt facilis accusamus quo accusantium, unde iste itaque porro sequi ut molestiae aperiam, inventore deserunt officiis. Quasi ex distinctio ab voluptatum quod odio voluptate sit provident natus.
-                    Suscipit iste adipisci, repellendus eligendi autem quaerat aliquid, aliquam illo facere sit aut. Unde fuga molestias dignissimos illo quos harum assumenda nesciunt, aperiam alias sit doloremque consequuntur possimus dolorem officiis.
-                    Voluptates ducimus asperiores placeat atque tenetur qui eius error, quas inventore blanditiis ex id illo eligendi ipsa voluptatum, nisi nobis reiciendis incidunt delectus eveniet veritatis! Praesentium ullam eligendi ea quidem.
-                    Labore eos molestiae eligendi aperiam, cum ducimus eveniet quod adipisci animi perferendis vitae dignissimos ad reiciendis nihil, dolor commodi numquam, sint distinctio. Ex ratione tempore ipsa iusto magni rem ea?
-                    Omnis ducimus harum numquam perferendis placeat aliquid iure ut accusantium architecto corporis eaque doloribus ipsam corrupti enim facilis sapiente, consequuntur repudiandae ea! Magni possimus architecto voluptatum amet a atque autem?
-                    Minima, quod a dolores dolore aut necessitatibus, delectus corrupti odio officiis debitis accusantium. Magni non quos eum optio quia illum earum explicabo laudantium quibusdam magnam inventore, odio deleniti nam impedit.
-                    Error, autem sint. Nisi tenetur tempore, dolor neque, maiores autem harum quia impedit eos pariatur quibusdam, praesentium ipsa reprehenderit voluptas excepturi facere quod similique beatae animi voluptatem. Fugiat, libero voluptate.</p>
+                <div class="event-item" v-for="n in 10">
+                    <span>
+                        <span class="caption">{{n}}</span>
+                        pointermove
+                        <Badge>pen</Badge>
+                    </span>
+                    <span class="caption">
+                        43434.34s
+                    </span>
                 </div>
             </div>
             <div class="aside_replay-controls">
-                <ButtonIcon>
+                <!-- <ButtonIcon>
                     <svg width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                         <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
                     </svg>
-                </ButtonIcon>
+                </ButtonIcon> -->
             </div>
         </aside>
         <main class="main-panel">
             <div class="main_header">
-                header
+                <!-- <h1>
+                    header
+                </h1> -->
             </div>
-            <div class="main_preview-panel">preview</div>
+            <div class="main_preview-panel">
+                <CaptureArea class="preview"></CaptureArea>
+            </div>
             <div class="main_details-panel">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, mollitia. Numquam neque iusto commodi, dolor at est. Cumque, repellat aliquam delectus ipsam doloremque atque reiciendis ex, vitae veniam hic beatae.
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, mollitia. Numquam neque iusto commodi, dolor at est. Cumque, repellat aliquam delectus ipsam doloremque atque reiciendis ex, vitae veniam hic beatae.
                 Repudiandae, ut voluptas fugiat sit id, asperiores voluptatum adipisci ea commodi, nisi libero? Quasi magnam eos magni distinctio sapiente ad ab ullam unde eveniet quam, assumenda dolore veritatis harum laboriosam.
                 Minima illum cupiditate molestiae quae inventore mollitia ipsum laborum ratione voluptas id enim nobis consequuntur sint deleniti, quibusdam itaque optio nulla obcaecati dignissimos non debitis! Provident dolorem nihil itaque debitis?
                 Perferendis ut voluptate quis beatae esse laudantium optio rerum quos itaque vitae, tenetur, non eum voluptatum vel dolorem? Dolore iusto tempora dicta quisquam debitis tenetur libero impedit eos veritatis reiciendis!
@@ -192,18 +185,20 @@
                 Tempora, amet vel soluta vitae sequi nam maiores nulla rem autem blanditiis molestias vero iste deleniti consequatur harum, ipsum ab ea nostrum obcaecati! Expedita, dolor autem? Quasi earum quod deserunt.
                 Veniam perferendis maiores, ut, tempore reprehenderit adipisci aliquam quae dignissimos laudantium, consectetur quis aspernatur ipsam! Dolores quaerat fugit vitae consectetur necessitatibus nulla explicabo tempore perferendis error ipsum, harum sapiente eligendi.
                 Iusto, libero eaque vero animi nesciunt officia soluta fugiat sunt nobis tempore molestiae quam, facere id dolorum culpa porro itaque rerum vitae aperiam facilis quod pariatur nihil eos enim. Eius.
-                Soluta assumenda ipsum odit architecto vel sequi laborum aut rem beatae voluptatum tempora esse dolores, obcaecati totam, sit dolor, numquam porro atque consequatur recusandae ratione vitae quidem. Cum, esse dolor?</p>
+                Soluta assumenda ipsum odit architecto vel sequi laborum aut rem beatae voluptatum tempora esse dolores, obcaecati totam, sit dolor, numquam porro atque consequatur recusandae ratione vitae quidem. Cum, esse dolor?</p> -->
             </div>
         </main>
     </div>
 </template>
 <script setup lang="ts">
+import Badge from '../components/Badge.vue';
 import ButtonIcon from '../components/ButtonIcon.vue';
+import CaptureArea from '../components/CaptureArea.vue';
 
 </script>
 <style scoped>
 .replay-layout {
-    background-color: violet;
+    /* background-color: violet; */
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -215,7 +210,7 @@ import ButtonIcon from '../components/ButtonIcon.vue';
     grid-area: aside;
 
     overflow: hidden;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 60px 1fr 60px;
@@ -223,28 +218,29 @@ import ButtonIcon from '../components/ButtonIcon.vue';
         "tabs"
         "content"
         "replay-controls";
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .aside_tabs-panel {
-    background-color: rgb(127, 136, 255);
+    /* background-color: rgb(127, 136, 255); */
     grid-area: tabs;
     overflow: hidden;
 }
 
 .aside_content-panel {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     grid-area: content;
     overflow-y: scroll;
 }
 
 .aside_replay-controls {
-    background-color: teal;
+    /* background-color: teal; */
     grid-area: replay-controls;
 }
 
 .replay-layout .main-panel {
     grid-area: main;
-    background-color: springgreen;
+    /* background-color: springgreen; */
     overflow-y: scroll;
     display: grid;
     grid-template-rows: 60px 80vh auto;
@@ -252,14 +248,40 @@ import ButtonIcon from '../components/ButtonIcon.vue';
         "header"
         "preview"
         "details";
+    background-color: rgb(0 0 0 / 9%);
+}
+
+.main-panel .main_header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px;
+    grid-area: header;
 }
 
 .main-panel .main_preview-panel {
-    background-color: antiquewhite;
+    grid-area: preview;
 }
+
+.main-panel .main_preview-panel .preview {
+    margin: auto;
+}
+
 .main-panel .main_details-panel {
-    background-color: rgb(194, 119, 21);
+    /* background-color: rgb(194, 119, 21); */
+    grid-area: details
 }
 
+.event-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.caption {
+    font-size: .8em;
+    opacity: .5;
+}
 </style>
