@@ -7,14 +7,14 @@
                 </h1> -->
             </div>
             <div class="aside_content-panel">
-                <div class="event-item" v-for="n in 10">
+                <div class="event-item" v-for="(item, index) in history">
                     <span>
-                        <span class="caption">{{n}}</span>
-                        pointermove
-                        <Badge>pen</Badge>
+                        <span class="caption">{{index + 1}}</span>
+                        {{ item.type }}
+                        <Badge>{{ item.pointerType }}</Badge>
                     </span>
                     <span class="caption">
-                        43434.34s
+                        {{ Math.floor(item.timeStamp) }}
                     </span>
                 </div>
             </div>
@@ -204,6 +204,9 @@
 import Badge from '../components/Badge.vue';
 import ButtonIcon from '../components/ButtonIcon.vue';
 import CaptureArea from '../components/CaptureArea.vue';
+import { useEventsRecorder } from '../composables/useEventsRecorder';
+
+const { history } = useEventsRecorder()
 
 </script>
 <style scoped>
