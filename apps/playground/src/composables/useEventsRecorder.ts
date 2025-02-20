@@ -1,4 +1,5 @@
 import { readonly, ref } from "vue"
+import { useRouter } from 'vue-router'
 
 const isRecording = ref(false)
 
@@ -11,6 +12,8 @@ const history = ref<PointerEvent[]>([])
 
 export function useEventsRecorder() {
 
+    const router = useRouter()
+
     function start() {
         history.value = []
         isRecording.value = true
@@ -18,6 +21,7 @@ export function useEventsRecorder() {
 
     function stop() {
         isRecording.value = false
+        router.push({ path: '/replay' })
     }
 
     function handle(event: Event) {
