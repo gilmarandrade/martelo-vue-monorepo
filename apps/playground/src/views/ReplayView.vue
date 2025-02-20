@@ -7,7 +7,7 @@
                 </h1> -->
             </div>
             <div class="aside_content-panel">
-                <div class="event-item" :class="{'is-current': currentIndex == index}" v-for="(item, index) in history" @click="selectEvent(index)">
+                <div class="event-item" :class="{'is-current': currentIndex == index}" v-for="(item, index) in history">
                     <span>
                         <span class="caption">#{{index + 1}}</span>
                         {{ item.type }}

@@ -8,7 +8,7 @@ const pointer = ref({
     y: 0
 })
 
-const currentIndex = ref<number>(0)
+const currentIndex = ref<number>(-1)
 
 const timerId = ref()
 
@@ -17,7 +17,7 @@ export function useEventsReplay() {
     const { history } = useEventsRecorder()
 
     function load() {
-        selectEvent(0)
+        // selectEvent(0)
     }
 
     function restart() {
@@ -35,11 +35,13 @@ export function useEventsReplay() {
     }
 
     function stop() {
+        clearTimeout(timerId.value)
+        currentIndex.value = -1
         isPlaying.value = false
     }
 
     function selectEvent(index: number) {
-        clearTimeout(timerId.value)
+        // clearTimeout(timerId.value)
         const event = history.value[index]
         console.log(`#${index + 1}`, event)
 
@@ -54,7 +56,7 @@ export function useEventsReplay() {
     function nextTick() {
         timerId.value = setTimeout(() => {
             if(currentIndex.value + 1 >= history.value.length) {
-
+                stop()
             } else {
                 currentIndex.value++
                 selectEvent(currentIndex.value)
