@@ -15,12 +15,17 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
 .button--icon {
     width: 24px;
     height: 24px;
+}
+
+.button:disabled {
+    opacity: .2;
+    cursor: not-allowed;
 }
 </style>

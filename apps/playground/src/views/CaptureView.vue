@@ -64,7 +64,7 @@ const lastEvent = computed(()=> {
 }
 
 .status-panel {
-    background-color: rgba(0, 0, 0, 0.247);
+    background-color: rgba(0, 0, 0, 0.3);
     grid-area: status;
     display: flex;
     align-items: center;
