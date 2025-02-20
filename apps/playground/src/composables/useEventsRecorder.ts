@@ -1,7 +1,13 @@
 import { readonly, ref } from "vue"
 
+const isRecording = ref(false)
+
+const pointer = ref({
+    x: 0,
+    y: 0
+})
+
 export function useEventsRecorder() {
-    const isRecording = ref(false)
 
     function start() {
         isRecording.value = true
@@ -14,6 +20,7 @@ export function useEventsRecorder() {
     return {
         start,
         stop,
-        isRecording: readonly(isRecording)
+        isRecording: readonly(isRecording),
+        pointer
     }
 }

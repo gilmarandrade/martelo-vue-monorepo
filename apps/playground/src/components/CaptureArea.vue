@@ -1,19 +1,26 @@
 <template>
     <div ref="captureAreaRef" class="capture-area">
         <svg class="capture-layer">
-            <circle cx="0" cy="0" r="5" fill="red"/>
+            <circle :cx="pointer.x" :cy="pointer.y" r="5" fill="red"/>
         </svg>
     </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
+import { useEventsRecorder } from '../composables/useEventsRecorder';
+
+const { pointer } = useEventsRecorder()
 
 const captureAreaRef = ref<Element>()
 
 function addEventListeners(element: Element, eventTypes:string[]) {
     eventTypes.forEach((type) => {
-        element.addEventListener(type, (e) => {
+        element.addEventListener(type, (e: Event) => {
+            pointer.value = {
+                x: (e as PointerEvent).offsetX,
+                y: (e as PointerEvent).offsetY
+            }
             console.log(type, e)
         })
     })
