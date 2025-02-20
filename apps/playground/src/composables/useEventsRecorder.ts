@@ -7,9 +7,12 @@ const pointer = ref({
     y: 0
 })
 
+const history = ref<PointerEvent[]>([])
+
 export function useEventsRecorder() {
 
     function start() {
+        history.value = []
         isRecording.value = true
     }
 
@@ -17,10 +20,19 @@ export function useEventsRecorder() {
         isRecording.value = false
     }
 
+    function handle(event: Event) {
+        if(isRecording.value) {
+            history.value.push(event as PointerEvent)
+            console.log(event.type, event)
+        }
+    }
+
     return {
         start,
         stop,
         isRecording: readonly(isRecording),
-        pointer
+        pointer,
+        history: readonly(history),
+        handle
     }
 }

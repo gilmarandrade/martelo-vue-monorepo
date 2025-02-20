@@ -10,9 +10,11 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useEventsRecorder } from '../composables/useEventsRecorder';
 
-const { pointer } = useEventsRecorder()
+const { pointer, handle } = useEventsRecorder()
 
 const captureAreaRef = ref<Element>()
+
+// TODO REMOVE EVENT LISTENER
 
 function addEventListeners(element: Element, eventTypes:string[]) {
     eventTypes.forEach((type) => {
@@ -21,10 +23,10 @@ function addEventListeners(element: Element, eventTypes:string[]) {
                 x: (e as PointerEvent).offsetX,
                 y: (e as PointerEvent).offsetY
             }
-            console.log(type, e)
+            handle(e)
         })
     })
-} 
+}
 
 const supportedEvents = ref([
     "pointerover",
