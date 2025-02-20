@@ -7,7 +7,7 @@
                 </h1> -->
             </div>
             <div class="aside_content-panel">
-                <div class="event-item" v-for="(item, index) in history">
+                <div class="event-item" :class="{'is-current': currentIndex == index}" v-for="(item, index) in history" @click="selectEvent(index)">
                     <span>
                         <span class="caption">#{{index + 1}}</span>
                         {{ item.type }}
@@ -58,7 +58,7 @@
                 </h1> -->
             </div>
             <div class="main_preview-panel">
-                <CaptureArea class="preview"></CaptureArea>
+                <ReplayArea class="preview"></ReplayArea>
             </div>
             <div class="main_details-panel">
                 <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, mollitia. Numquam neque iusto commodi, dolor at est. Cumque, repellat aliquam delectus ipsam doloremque atque reiciendis ex, vitae veniam hic beatae.
@@ -216,12 +216,17 @@
     </div>
 </template>
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import Badge from '../components/Badge.vue';
 import ButtonIcon from '../components/ButtonIcon.vue';
-import CaptureArea from '../components/CaptureArea.vue';
-import { useEventsRecorder } from '../composables/useEventsRecorder';
+import ReplayArea from '../components/ReplayArea.vue';
+import { useEventsReplay } from '../composables/useEventsReplay';
 
-const { history } = useEventsRecorder()
+const { history, currentIndex, load, selectEvent } = useEventsReplay()
+
+onMounted(() => {
+    load()
+})
 
 </script>
 <style scoped>
@@ -306,6 +311,10 @@ const { history } = useEventsRecorder()
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.event-item.is-current {
+    background-color: rgba(0, 162, 255, 0.2);
 }
 
 .caption {

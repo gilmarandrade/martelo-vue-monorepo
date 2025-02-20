@@ -35,7 +35,7 @@ export function useEventsRecorder() {
         start,
         stop,
         isRecording: readonly(isRecording),
-        pointer,
+        pointer: pointer,
         history: readonly(history),
         handle
     }
