@@ -1,10 +1,49 @@
 <template>
-    <div class="capture-area">
+    <div ref="captureAreaRef" class="capture-area">
         <svg class="capture-layer">
             <circle cx="0" cy="0" r="5" fill="red"/>
         </svg>
     </div>
 </template>
+
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue';
+
+const captureAreaRef = ref<Element>()
+
+function addEventListeners(element: Element, eventTypes:string[]) {
+    eventTypes.forEach((type) => {
+        element.addEventListener(type, (e) => {
+            console.log(type, e)
+        })
+    })
+} 
+
+const supportedEvents = ref([
+    "pointerover",
+    "pointerenter",
+    "pointerdown",
+    "pointermove",
+    "pointerup",
+    "pointercancel",
+    "pointerout",
+    "pointerleave",
+    "gotpointercapture",
+    "lostpointercapture"
+])
+
+onMounted(() => {
+    console.log('capture area mounted', captureAreaRef.value)
+    if(captureAreaRef.value) {
+        addEventListeners(captureAreaRef.value, supportedEvents.value)
+    }
+
+})
+
+onUnmounted(() => {
+    console.log('capture area unmounted')
+})
+</script>
 
 <style scoped>
 .capture-area {
@@ -21,5 +60,6 @@
     inset: 0;
     width: 100%;
     height: 100%;
+    pointer-events: none;
 }
 </style>
