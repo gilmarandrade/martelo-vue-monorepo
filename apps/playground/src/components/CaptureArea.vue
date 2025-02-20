@@ -14,17 +14,23 @@ const { pointer, handle } = useEventsRecorder()
 
 const captureAreaRef = ref<Element>()
 
-// TODO REMOVE EVENT LISTENER
+function eventListener(e: Event) {
+        pointer.value = {
+            x: (e as PointerEvent).offsetX,
+            y: (e as PointerEvent).offsetY
+        }
+        handle(e)
+}
 
 function addEventListeners(element: Element, eventTypes:string[]) {
     eventTypes.forEach((type) => {
-        element.addEventListener(type, (e: Event) => {
-            pointer.value = {
-                x: (e as PointerEvent).offsetX,
-                y: (e as PointerEvent).offsetY
-            }
-            handle(e)
-        })
+        element.addEventListener(type, eventListener)
+    })
+}
+
+function removeEventListeners(element: Element, eventTypes:string[]) {
+    eventTypes.forEach((type) => {
+        element.removeEventListener(type, eventListener)
     })
 }
 
@@ -51,6 +57,9 @@ onMounted(() => {
 
 onUnmounted(() => {
     console.log('capture area unmounted')
+    if(captureAreaRef.value) {
+      removeEventListeners(captureAreaRef.value, supportedEvents.value)
+    }
 })
 </script>
 
