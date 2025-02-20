@@ -9,9 +9,24 @@
             <div class="aside_content-panel">
                 <div class="event-item" v-for="(item, index) in history">
                     <span>
-                        <span class="caption">{{index + 1}}</span>
+                        <span class="caption">#{{index + 1}}</span>
                         {{ item.type }}
+                        <br/>
                         <Badge>{{ item.pointerType }}</Badge>
+                        <Badge>id: {{ item.pointerId }}</Badge>
+                        <Badge>{{ item.isPrimary ? 'primary' : 'secondary' }}</Badge>
+                        <br/>
+                        <Badge>Screen: {{ item.screenX }} x {{ item.screenX }}</Badge>
+                        <Badge>Client: {{ item.clientX }} x {{ item.clientY }}</Badge>
+                        <Badge>Offset: {{ item.offsetX }} x {{ item.offsetY }}</Badge>
+                        <Badge>Page: {{ item.pageX }} x {{ item.pageY }}</Badge>
+                        <Badge>Movement: {{ item.movementX }} x {{ item.movementY }}</Badge>
+                        <br/>
+                        <Badge v-if="item.buttons">Buttons: {{ item.buttons }}</Badge>
+                        <Badge v-if="item.altKey">alt</Badge>
+                        <Badge v-if="item.ctrlKey">ctrl</Badge>
+                        <Badge v-if="item.metaKey">meta</Badge>
+                        <Badge v-if="item.shiftKey">shift</Badge>
                     </span>
                     <span class="caption">
                         {{ Math.floor(item.timeStamp) }}
