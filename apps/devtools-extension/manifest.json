@@ -3,8 +3,8 @@
     "description": "Martelo Devtools Extension",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
     "action": {
-      "default_popup": "hello.html",
       "default_icon": "icon.png"
     },
     "content_scripts": [
@@ -12,5 +12,8 @@
             "js": ["scripts/content.js"],
             "matches": ["<all_urls>"]
         }
-    ]
+    ],
+    "background": {
+        "service_worker": "workers/background.js"
+    }
   }
