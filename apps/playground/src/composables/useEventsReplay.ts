@@ -40,13 +40,13 @@ export function useEventsReplay() {
         isPlaying.value = false
     }
 
-    function selectEvent(index: number) {
+    function updatePointer(index: number) {
         // clearTimeout(timerId.value)
-        const event = history.value[index]
-        console.log(`#${index + 1}`, event)
+        // const event = history.value[index]
+        // console.log(index, `#${index+ 1}`)
 
-        currentIndex.value = index
-        const current = history.value[currentIndex.value]
+        // currentIndex.value = index
+        const current = history.value[index]
         pointer.value = {
             x: current.offsetX,
             y: current.offsetY,
@@ -54,15 +54,31 @@ export function useEventsReplay() {
     }
 
     function nextTick() {
-        timerId.value = setTimeout(() => {
-            if(currentIndex.value + 1 >= history.value.length) {
-                stop()
-            } else {
-                currentIndex.value++
-                selectEvent(currentIndex.value)
-                nextTick()
-            }
-        }, 300);
+        const current = currentIndex.value + 1
+
+        if(current >= history.value.length) {
+            // console.log('stop', current, history.value.length)
+            stop()
+        } else {
+            updatePointer(current)
+            const next = currentIndex.value + 2
+            const delay = (history.value[next]?.timeStamp - history.value[current]?.timeStamp) || 0
+            const velocity = 1
+            // console.log(
+            //     "current:", current,
+            //     `#${current+1}`,
+            //     "next:", next,
+            //     history.value[current]?.timeStamp, 
+            //     history.value[next]?.timeStamp,
+            //     delay
+            // )
+          
+            currentIndex.value++
+            timerId.value = setTimeout(nextTick, delay * velocity);
+           
+        }
+
+
     }
 
     return {
@@ -71,7 +87,7 @@ export function useEventsReplay() {
         resume,
         pause,
         stop,
-        selectEvent,
+        selectEvent: updatePointer,
         isPlaying: readonly(isPlaying),
         history,
         currentIndex: readonly(currentIndex),
