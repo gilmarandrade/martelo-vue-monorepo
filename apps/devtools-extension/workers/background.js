@@ -4,9 +4,15 @@ import './sw-tips.js';
 // Save default API suggestions
 chrome.runtime.onInstalled.addListener(({ reason }) => {
     if (reason === 'install') {
-      chrome.storage.local.set({
-        apiSuggestions: ['tabs', 'storage', 'scripting']
-      });
+        chrome.storage.local.set({ tip: 'Lorem ipsum dolor' });
+    }
+});
+
+// Send tip to content script via messaging
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.greeting === 'tip') {
+        chrome.storage.local.get('tip').then(sendResponse);
+      return true;
     }
 });
 
