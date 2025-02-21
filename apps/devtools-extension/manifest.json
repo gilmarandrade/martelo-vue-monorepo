@@ -14,6 +14,7 @@
         }
     ],
     "background": {
-        "service_worker": "workers/background.js"
+        "service_worker": "workers/background.js",
+        "type": "module"
     }
   }
