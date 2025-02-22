@@ -15,9 +15,10 @@ chrome.runtime.onConnect.addListener(function (port) {
     }
 });
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log('received', message)
-});
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     console.log('received', message)
+//     chrome.runtime.sendMessage({ detectedEvent: message })
+// });
 
 
 
