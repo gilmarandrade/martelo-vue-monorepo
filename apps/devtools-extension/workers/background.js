@@ -1,20 +1,39 @@
-import './sw-omnibox.js';
-import './sw-tips.js';
+var openCount = 0;
+chrome.runtime.onConnect.addListener(function (port) {
+    if (port.name == "devtools-page") {
+      if (openCount == 0) {
+        console.log("DevTools window opening.", port);
+      }
+      openCount++;
 
-// Save default API suggestions
-chrome.runtime.onInstalled.addListener(({ reason }) => {
-    if (reason === 'install') {
-        chrome.storage.local.set({ tip: 'Lorem ipsum dolor' });
+      port.onDisconnect.addListener(function(port) {
+          openCount--;
+          if (openCount == 0) {
+            console.log("Last DevTools window closing.", port);
+          }
+      });
     }
 });
 
-// Send tip to content script via messaging
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.greeting === 'tip') {
-        chrome.storage.local.get('tip').then(sendResponse);
-      return true;
-    }
-});
+
+
+// import './sw-omnibox.js';
+// import './sw-tips.js';
+
+// // Save default API suggestions
+// chrome.runtime.onInstalled.addListener(({ reason }) => {
+//     if (reason === 'install') {
+//         chrome.storage.local.set({ tip: 'Lorem ipsum dolor' });
+//     }
+// });
+
+// // Send tip to content script via messaging
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     if (message.greeting === 'tip') {
+//         chrome.storage.local.get('tip').then(sendResponse);
+//       return true;
+//     }
+// });
 
 
 // chrome.runtime.onInstalled.addListener(() => {

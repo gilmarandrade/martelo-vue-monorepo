@@ -8,11 +8,9 @@
       "default_icon": "icon.png"
     },
     "devtools_page": "devtools.html",
-    "content_scripts": [
-        {
-            "js": ["scripts/content.js"],
-            "matches": ["<all_urls>"]
-        }
+    "host_permissions": [
+            "https://*/*",
+            "http://*/*"
     ],
     "background": {
         "service_worker": "workers/background.js",
