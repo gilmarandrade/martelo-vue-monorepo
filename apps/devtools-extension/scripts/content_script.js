@@ -20,6 +20,16 @@
         `);
       
         document.body.append(captureAreaEl);
+
+        document.body.addEventListener('pointerdown', (e) => {
+            console.log('pointerdown', e)
+            chrome.runtime.sendMessage({
+                event: 'POINTERDOWN',
+                pointerType: e.pointerType,
+                pointerId: e.pointerId,
+                timeStamp: e.timeStamp
+            })
+        })
     }
   
 })();

@@ -24,3 +24,4 @@ const serviceWorkerConnection = chrome.runtime.connect({
 setInterval(() => {
   serviceWorkerConnection.postMessage("heartbeat");
 }, 15000);
+
