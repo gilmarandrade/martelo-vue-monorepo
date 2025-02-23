@@ -1,0 +1,36 @@
+/* * {
+    display: none !important;
+  }
+  
+html,
+body,
+*:has(article),
+article,
+article * {
+display: revert !important;
+}
+
+[role='navigation'] {
+display: none !important;
+}
+
+article {
+margin: auto;
+max-width: 700px;
+} */
+
+#martelo-vue-capture-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  opacity: 0.3;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+}
+
+#martelo-vue-capture-area.is-recording {
+  background-color: green;
+}

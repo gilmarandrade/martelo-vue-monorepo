@@ -13,6 +13,11 @@ chrome.scripting.executeScript({
   files: ["./scripts/content_script.js"]
 });
 
+chrome.scripting.insertCSS({
+  files: ["capture-area.css"],
+  target: { tabId: chrome.devtools.inspectedWindow.tabId },
+});
+
 
 
 // Create a connection to the service worker

@@ -7,17 +7,7 @@
     let captureAreaEl = document.querySelector('#martelo-vue-capture-area')
     if(captureAreaEl) {
     } else {
-        captureAreaEl = createDomElement(`
-          <div id="martelo-vue-capture-area" style="position: fixed;
-                        top: 0;
-                        left: 0;
-                        background-color: yellow;
-                        opacity: 0.3;
-                        pointer-events: none;
-                        width: 100vw;
-                        height: 100vh;
-                        z-index: 2000;"></div>
-        `);
+        captureAreaEl = createDomElement(`<div id="martelo-vue-capture-area"></div>`);
       
         document.body.append(captureAreaEl);
 
@@ -42,11 +32,11 @@ function createDomElement(html) {
 function startedRecording() {
     console.log('started recording')
     let captureAreaEl = document.querySelector('#martelo-vue-capture-area')
-    captureAreaEl.style.backgroundColor = 'green'
+    captureAreaEl.classList.add('is-recording')
 }
 
 function stopedRecording() {
     console.log('stoped recording')
     let captureAreaEl = document.querySelector('#martelo-vue-capture-area')
-    captureAreaEl.style.backgroundColor = 'red'
+    captureAreaEl.classList.remove('is-recording')
 }
