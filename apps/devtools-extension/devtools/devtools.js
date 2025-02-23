@@ -1,6 +1,6 @@
 chrome.devtools.panels.create("Martelo Vue",
     "MyPanelIcon.png",
-    "panel.html",
+    "panels/panel.html",
     function(panel) {
       // code invoked on panel creation
     }
@@ -10,11 +10,11 @@ chrome.scripting.executeScript({
   target: {
     tabId: chrome.devtools.inspectedWindow.tabId
   },
-  files: ["./scripts/content_script.js"]
+  files: ["scripts/content_script.js"]
 });
 
 chrome.scripting.insertCSS({
-  files: ["capture-area.css"],
+  files: ["scripts/capture-area.css"],
   target: { tabId: chrome.devtools.inspectedWindow.tabId },
 });
 
