@@ -10,12 +10,18 @@ updateStatus()
 btnStartEl.addEventListener('click', () => {
     console.log('start recording')
     isRecording = true
+    chrome.devtools.inspectedWindow.eval("startedRecording()",
+        { useContentScriptContext: true }
+    );
     updateStatus()
 })
 
 btnStopEl.addEventListener('click', () => {
     console.log('stop recording')
     isRecording = false
+    chrome.devtools.inspectedWindow.eval("stopedRecording()",
+        { useContentScriptContext: true }
+    );
     updateStatus()
 })
 

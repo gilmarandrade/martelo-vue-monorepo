@@ -11,7 +11,7 @@
           <div id="martelo-vue-capture-area" style="position: fixed;
                         top: 0;
                         left: 0;
-                        background-color: green;
+                        background-color: yellow;
                         opacity: 0.3;
                         pointer-events: none;
                         width: 100vw;
@@ -31,10 +31,22 @@
             })
         })
     }
-    
+
 })();
-  
+
 function createDomElement(html) {
     const dom = new DOMParser().parseFromString(html, 'text/html');
     return dom.body.firstElementChild;
+}
+
+function startedRecording() {
+    console.log('started recording')
+    let captureAreaEl = document.querySelector('#martelo-vue-capture-area')
+    captureAreaEl.style.backgroundColor = 'green'
+}
+
+function stopedRecording() {
+    console.log('stoped recording')
+    let captureAreaEl = document.querySelector('#martelo-vue-capture-area')
+    captureAreaEl.style.backgroundColor = 'red'
 }
